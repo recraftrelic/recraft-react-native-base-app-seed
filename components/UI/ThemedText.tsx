@@ -1,11 +1,12 @@
 import React from 'react';
 import { TextProps, Text, StyleProp, TextStyle } from 'react-native';
-import { AppTheme } from '../../config/DefaultConfig';
-import useTheme from '../../hooks/useTheme';
+import useTheme from '../../config/theme/useTheme';
+import { AppTheme } from '../../config/theme/themes';
 
 interface Props extends TextProps {
   children: React.ReactChild,
   styleKey: string,
+  style: StyleProp,
 }
 
 const ThemedText: React.FunctionComponent<Props> = (props: Props) => {

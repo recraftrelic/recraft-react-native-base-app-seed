@@ -1,0 +1,3 @@
+[submodule "config/theme"]
+	path = config/theme
+	url = git@github.com:recraftrelic/react-native-theme-submodule.git

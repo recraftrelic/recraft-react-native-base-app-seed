@@ -1,15 +1,7 @@
 import { handleActions, createAction } from 'redux-actions';
 import { ApplicationConfig, defaultConfig } from '../../config/DefaultConfig';
 import { Reducer, ReducerState } from 'react';
-
-enum ThemeActionType {
-    SET_THEME = "SET_THEME"
-}
-
-interface ThemeAction {
-    type: ThemeActionType,
-    payload: any
-}
+import { ThemeAction } from '../../config/theme/themes';
 
 type ConfigReducerType = Reducer<ApplicationConfig, ThemeAction>
 
@@ -20,9 +12,9 @@ const configReducer: ConfigReducerType = handleActions(
         SET_THEME: (state, action) => {
             return {
                 ...state,
-                theme: {
-                    ...state,
-                    ...action.payload
+                constants: {
+                    ...state.constants,
+                    selectedTheme: action.payload
                 }
             };
         },

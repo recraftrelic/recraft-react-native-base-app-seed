@@ -1,10 +1,11 @@
 import React from 'react';
 import { ViewProps, SafeAreaView, StyleProp, ViewStyle } from 'react-native';
-import { AppTheme } from '../../config/DefaultConfig';
-import useTheme from '../../hooks/useTheme';
+import useTheme from '../../config/theme/useTheme';
+import { AppTheme } from '../../config/theme/themes';
 
 interface Props extends ViewProps {
-  children: React.ReactChild
+  children: React.ReactChild,
+  style: StyleProp,
 }
 
 const ThemedView: React.FunctionComponent<Props> = (props: Props) => {

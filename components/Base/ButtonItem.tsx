@@ -1,8 +1,8 @@
 import React from 'react';
 import { GestureResponderEvent, StyleSheet, TouchableOpacity, View, ViewStyle, TextStyle } from 'react-native';
-import useTheme from "../../hooks/useTheme";
-import { AppTheme } from "../../config/DefaultConfig";
+import useTheme from "../../config/theme/useTheme";
 import ThemedText from '../UI/ThemedText';
+import { AppTheme } from '../../config/theme/themes';
 
 interface Props {
     label: string;
