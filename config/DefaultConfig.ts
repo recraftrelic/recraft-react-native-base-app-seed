@@ -1,45 +1,17 @@
-export interface AppTheme {
-  backgroundColor: string,
-  highlightColor: string,
-  highlightTextColor: string,
-  textColor: string,
-  lightTextColor: string,
-  lightBottomColor: string,
-  alternateMessageBackgroundColor: string,
-}
+import { ThemeKey } from "./theme/themes";
 
 export interface AppConstants {
-    title: string,
+  selectedTheme: ThemeKey,
+  title: string,
 }
 
 export interface ApplicationConfig {
-    theme?: AppTheme,
-    constants?: AppConstants
-}
-
-export const darkTheme: AppTheme = {
-  backgroundColor: "#000000",
-  highlightColor: "grey",
-  highlightTextColor: "#ffffff",
-  textColor: "#fff",
-  lightTextColor: "#b3b3b3",
-  lightBottomColor: "#666666",
-  alternateMessageBackgroundColor: '#4682b4',
-}
-
-export const lightTheme: AppTheme = {
-  backgroundColor: "#ffffff",
-  highlightColor: "green",
-  highlightTextColor: "#ffffff",
-  textColor: "#333",
-  lightTextColor: "#b3b3b3",
-  lightBottomColor: "#e6e6e6",
-  alternateMessageBackgroundColor: '#B0E0E6',
+  constants?: AppConstants
 }
 
 export const defaultConfig: ApplicationConfig = {
-    theme: lightTheme,
-    constants: {
-      title: "Base App",
-    }
+  constants: {
+    selectedTheme: ThemeKey.light,
+    title: "Base App",
+  }
 }

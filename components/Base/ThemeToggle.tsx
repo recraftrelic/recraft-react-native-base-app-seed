@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, ViewStyle, StyleSheet, Switch, TextStyle, StatusBar } from 'react-native';
-import { AppTheme, lightTheme, darkTheme, AppConstants } from '../../config/DefaultConfig';
-import useTheme from '../../hooks/useTheme';
+import { AppConstants } from '../../config/DefaultConfig';
+import useTheme from '../../config/theme/useTheme';
 import ThemedText from '../UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
+import { ThemeKey, AppTheme } from '../../config/theme/themes';
 
 interface Props {
-  updateTheme: (theme: AppTheme) => void
-}
+  updateTheme: (theme: ThemeKey) => void;
+};
 
 const ThemeToggle: React.FunctionComponent<Props> = ({
   updateTheme
 }: Props) => {
   const theme: AppTheme = useTheme();
+  const { selectedTheme }: AppConstants = useConstants();
+  const [isDarkTheme, toggleDarkTheme] = useState<boolean>(selectedTheme == ThemeKey.dark);
   const constants: AppConstants = useConstants();
 
-  const [isDarkTheme, toggleDarkTheme] = useState<boolean>(false);
-
   useEffect(() => {
-    updateTheme(isDarkTheme ? darkTheme : lightTheme)
+    const newSelectedTheme = isDarkTheme ? ThemeKey.dark : ThemeKey.light
+
+    updateTheme(newSelectedTheme)
   }, [isDarkTheme]);
 
   return (
     <View>
-      <StatusBar barStyle={isDarkTheme ? "light-content" : "dark-content"} translucent={true} />
+      <StatusBar barStyle={isDarkTheme} translucent={true} />
       <View style={style.topContainer}>
         <View style={style.childContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.title}</ThemedText>
