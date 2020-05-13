@@ -8,7 +8,7 @@ The goal of this boilerplate is to provide a simple functional routing & theme a
 Demo
 =======
 <p align="center">
-  <img src="./ios.gif">
+  <img width="250" src="./images/ios.gif"><img width="250" src="./images/android.gif">
 </p>
 
 Packages & Libraries used
@@ -18,6 +18,7 @@ Packages & Libraries used
 * [React](https://www.npmjs.com/package/react)
 * [React router native](https://www.npmjs.com/package/react-router-native)
 * [TypeScript](https://www.npmjs.com/package/typescript)
+* [React Native Picker Select](https://www.npmjs.com/package/react-native-picker-select)
 
 Steps to Run the Project in Development Mode
 =======

@@ -1,4 +1,5 @@
 import { ThemeKey } from "./themes";
+import { LanguageKey } from "./languages";
 
 export interface AppTheme {
     backgroundColor: string,
@@ -12,6 +13,7 @@ export interface AppTheme {
 
 export interface AppConstants {
     selectedTheme: ThemeKey,
+    selectedLanguage: LanguageKey,
     title: string,
 }
 
@@ -22,6 +24,7 @@ export interface ApplicationConfig {
 export const defaultConfig: ApplicationConfig = {
     constants: {
       selectedTheme: ThemeKey.light,
+      selectedLanguage: LanguageKey.en,
       title: "Base App",
     }
 }
